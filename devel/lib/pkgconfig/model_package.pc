@@ -1,0 +1,8 @@
+prefix=/home/ramaz/123/devel
+
+Name: model_package
+Description: Description of model_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

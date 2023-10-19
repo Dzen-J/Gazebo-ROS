@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<arg name="world_name" value="$(find model_package)/world/my_world.world"/>
+</include>
+	
+	
+    <param name="robot_description_0" command="cat '$(find model_package)/urdf/rosbots_0.xacro'" />
+   <node name="mybot_spawn_0" pkg="gazebo_ros" type="spawn_model" output="screen"
+         args="-urdf -param robot_description_0 -model rosbots_0 -x 0 -y -5 -z 0.5" />
+
+   <param name="robot_description_1" command="cat '$(find model_package)/urdf/rosbots_1.xacro'" />
+   <node name="mybot_spawn_1" pkg="gazebo_ros" type="spawn_model" output="screen"
+         args="-urdf -param robot_description_1 -model rosbots_1 -x 0 -y 0 -z 0.5" />
+        
+   <param name="robot_description_2" command="cat '$(find model_package)/urdf/rosbots_2.xacro'" />
+   <node name="mybot_spawn_2" pkg="gazebo_ros" type="spawn_model" output="screen"
+         args="-urdf -param robot_description_2 -model rosbots_2 -x 0 -y 5 -z 0.5" />
+
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model rosbots -x $(arg x) -y $(arg y) -z $(arg z)" /> 
+</launch>

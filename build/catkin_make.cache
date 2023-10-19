@@ -1,0 +1,2 @@
+model_package
+-DCATKIN_DEVEL_PREFIX=/home/ramaz/123/devel -DCMAKE_INSTALL_PREFIX=/home/ramaz/123/install -G Unix Makefiles
